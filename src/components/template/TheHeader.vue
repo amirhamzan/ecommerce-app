@@ -4,7 +4,7 @@
       class="d-flex justify-content-center align-items-center"
       style="height: 85px; background-color: #003d29"
     >
-      <h4 class="text-light">E-Commerce App</h4>
+      <h5 class="text-light">E-Commerce App</h5>
     </div>
     <nav
       class="navbar navbar-expand-lg bg-body-tertiary"

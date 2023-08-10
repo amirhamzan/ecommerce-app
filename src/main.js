@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import PrimeVue from 'primevue/config'
-import "primevue/resources/themes/lara-dark-purple/theme.css"
+import "primevue/resources/themes/vela-green/theme.css"
 import "primeicons/primeicons.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap.min.js"

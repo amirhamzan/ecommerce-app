@@ -1,6 +1,6 @@
 <template>
   <TheHeader />
-  <body style="min-height: 50vh;" class="container p-5">
+  <body style="min-height: 50vh" class="container p-5">
     <slot />
   </body>
   <TheFooter />
@@ -10,3 +10,13 @@
 import TheHeader from "./TheHeader.vue";
 import TheFooter from "./TheFooter.vue";
 </script>
+
+<style>
+.border-radius {
+  border-radius: 20px;
+}
+
+.a-primary-color {
+  color: #003D29;
+}
+</style>
