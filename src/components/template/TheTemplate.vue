@@ -17,6 +17,6 @@ import TheFooter from "./TheFooter.vue";
 }
 
 .a-primary-color {
-  color: #003D29;
+  color: #1f2d40;
 }
 </style>

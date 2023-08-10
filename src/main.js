@@ -8,11 +8,13 @@ import "bootstrap/dist/js/bootstrap.min.js"
 
 import Button from "primevue/button"
 import TabMenu from 'primevue/tabmenu'
+import Dialog from 'primevue/dialog'
 
 import App from './App.vue'
 import router from './router'
 
 import TheTemplate from './components/template/TheTemplate.vue'
+import ItemCard from './components/general/ItemCard.vue'
 
 const app = createApp(App)
 
@@ -22,7 +24,9 @@ app.use(PrimeVue)
 
 app.component('Button', Button)
 app.component('TabMenu', TabMenu)
+app.component('Dialog', Dialog)
 
 app.component('TheTemplate', TheTemplate)
+app.component('ItemCard', ItemCard)
 
 app.mount('#app')

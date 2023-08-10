@@ -2,7 +2,7 @@
   <div class="container-fluid p-0">
     <div
       class="d-flex justify-content-center align-items-center"
-      style="height: 85px; background-color: #003d29"
+      style="height: 85px; background-color: #1f2d40"
     >
       <h5 class="text-light">E-Commerce App</h5>
     </div>
@@ -29,7 +29,12 @@
               <a class="nav-link" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Categories</a>
+              <a
+                class="nav-link"
+                @click="getCategories()"
+                href="javascript:void(0);"
+                >Categories</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Order</a>
@@ -53,4 +58,44 @@
       </div>
     </nav>
   </div>
+  <Dialog
+    v-model:visible="visible"
+    modal
+    header="Categories"
+    :style="{ width: '50vw' }"
+  >
+    <div v-if="isLoading" class="text-center">
+      <i class="pi pi-spin pi-spinner" style="font-size: 4rem"></i>
+    </div>
+    <div v-else>
+      <div class="mb-2">Please select the category:</div>
+      <div class="text-center">
+        <Button
+          v-for="category in categories"
+          :key="category"
+          :label="category"
+          severity="help"
+          class="m-2"
+        />
+      </div>
+    </div>
+  </Dialog>
 </template>
+
+<script setup>
+import { ref } from "vue";
+
+const categories = ref(null);
+const visible = ref(false);
+const isLoading = ref(false);
+
+async function getCategories() {
+  isLoading.value = true;
+  setTimeout(() => isLoading.value = false, 1000);
+  visible.value = true;
+  const response = await fetch("https://dummyjson.com/products/categories");
+  const listCategories = await response.json();
+  categories.value = listCategories;
+  console.log(categories.value);
+}
+</script>
